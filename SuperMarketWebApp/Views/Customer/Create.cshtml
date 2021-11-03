@@ -1,0 +1,28 @@
+﻿@using SuperMarketWebApp.DTO.CustomerDTO
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Create Customer</a>.</p>
+</div>
+<div>
+@model CreateCustomerDTO
+
+@using (Html.BeginForm("CreateCustomer", "Customer"))
+{
+    @Html.LabelFor(m => m.FirstName)
+    @Html.TextBoxFor(m => m.FirstName)
+    <br />
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+    <br />
+    @Html.LabelFor(m => m.FatherName)
+    @Html.TextBoxFor(m => m.FatherName)
+    <br />
+    @Html.LabelFor(m => m.MotherName)
+    @Html.TextBoxFor(m => m.MotherName)
+    <br />
+    @Html.LabelFor(m => m.NationalNo)
+    @Html.TextBoxFor(m => m.NationalNo)
+    <br />
+    <button type="submit">Save</button>
+}
+</div>

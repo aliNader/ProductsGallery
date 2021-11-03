@@ -1,0 +1,41 @@
+﻿@using DataAccessLayer.Models
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This Is Customer View</a>.</p>
+</div>
+<div>
+
+    <div>
+        <input type="button" value="Create Customer" onclick="location.href='@Url.Action("Create", "Customer")'" />
+    </div>
+</div>
+<table style="width: 100%;">
+    <tr>
+        <th>Actions</th>
+        <th>National No</th>
+        <th>Full Name</th>
+        <th>Mother Name</th>
+    </tr>
+     @foreach(var item in Model) {
+    <tr>
+        <td> 
+            @Html.ActionLink("Edit", "EditCustomer", new { id = item.Id })
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+         </td>
+        <td>
+            @item.NationalNo
+        </td>
+        <td>
+            @item.FullName
+        </td>
+       <td>
+           @item.MotherName
+       </td>
+    </tr>
+            }
+    <tr></tr>
+</table>
